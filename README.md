@@ -11,6 +11,7 @@ Something strange is happening with the City sewers.  Mutant turtles are emergin
 
 How to Play:
 
+
 Move Right: Right Arrow Key
 
 Move Left: Left Arrow Key
@@ -33,6 +34,10 @@ As the stages progress, the creatures become more numerous and their speed incre
 --------------
 
 Updates:
+
+Update 1.01: 2021-02-20
+
+New graphics have been added to mark the transition between the stages/modes (i.e. pause, game over).  New classes have been created shaping the file structure/skeleton of the game (i.e. parent->child classes).
 
 Initial Commit: 2021-02-19
 
