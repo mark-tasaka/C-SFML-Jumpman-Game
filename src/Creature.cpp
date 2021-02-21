@@ -43,12 +43,6 @@ FloatRect Creature::getRight()
 }
 
 
-Sprite Creature::getSprite()
-{
-	return m_Sprite;
-}
-
-
 void Creature::stopFalling(float position)
 {
 	m_Position.y = position - getPosition().height;
@@ -76,5 +70,10 @@ void Creature::stopJump()
 	m_IsFalling = true;
 }
 
+
+Sprite Creature::getSprite()
+{
+	return m_Sprite;
+}
 
 

@@ -1,17 +1,25 @@
 #pragma once
-#ifndef CREATURE_H
-#define CREATURE_H
-
+#ifndef PLAYERONE_H
+#define PLAYERONE_H
 
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
 
-class Creature
+class PlayerOne
 {
-protected:
+private:
 
 	Sprite m_Sprite;
+
+	int m_Lives;
+	bool is_Alive;
+
+	IntRect m_Start;
+
+	// Which directions is the Player Moving
+	bool m_LeftPressed;
+	bool m_RightPressed;
 
 	bool m_IsJumping;
 	bool m_IsFalling;
@@ -40,8 +48,17 @@ protected:
 
 public:
 
-	void spawn(Vector2f startPosition, float gravity);
+	PlayerOne();
+
+	void spawn();
 	// Where is the player
+
+	Sprite getSprite();
+
+	// Where is the center of the character
+	Vector2f getCenter();
+	void update(float elapsedTime);
+	bool handleInput();
 
 	FloatRect getPosition();
 
@@ -58,14 +75,6 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 
-
-	// We will call this function once every frame
-	void update(float elapsedTime);
-
-	Sprite getSprite();
-
-
 };
 
-#endif // !CREATURE_H
-
+#endif // !PLAYERONE_H

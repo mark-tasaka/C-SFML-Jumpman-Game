@@ -15,6 +15,9 @@ public:
 	bool m_RightPressed;
 
 	Player();
+
+	// Where is the center of the character
+	Vector2f getCenter();
 	void update(float elapsedTime);
 	bool handleInput();
 
