@@ -35,6 +35,11 @@ As the stages progress, the creatures become more numerous and their speed incre
 
 Updates:
 
+Update 1.02: 2021-02-21
+
+Added more functionally to the code.
+
+
 Update 1.01: 2021-02-20
 
 New graphics have been added to mark the transition between the stages/modes (i.e. pause, game over).  New classes have been created shaping the file structure/skeleton of the game (i.e. parent->child classes).
