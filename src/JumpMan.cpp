@@ -12,6 +12,7 @@
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <string>
+#include <time.h>
 #include <vector>
 
 using namespace std;
@@ -47,15 +48,9 @@ int main()
 
 	Sprite spriteBackground;
 	spriteBackground.setTexture(background);
-	//set the spriteBackground to cover the screne
 
-	/*
-	//FOr Testing
-	Texture jumpManTest;
-	jumpManTest.loadFromFile("../assets/images/jumpManSpriteSheet.png");
-
-	Sprite jumpMan2 = Sprite(jumpManTest, sf::IntRect(0, 100, 40, 50));
-	*/
+	// Here is our clock for timing everything
+	Clock clock;
 
 	while (window.isOpen())
 	{
@@ -71,17 +66,50 @@ int main()
 
 		}
 
-		jumpMan.spawn();
+		//jumpMan.spawn();
 
 		if (Keyboard::isKeyPressed(Keyboard::Escape))
 		{
 			window.close();
 		}
 
+		// Handle the pressing and releasing of the arrow keys
+		if (Keyboard::isKeyPressed(Keyboard::Left))
+		{
+			if (jumpMan.getPosition().left < 50)
+			{
+				jumpMan.stopLeft();
+			}
+			else
+			{
+				jumpMan.moveLeft();
+			}
+		}
+		else
+		{
+			jumpMan.stopLeft();
+		}
 
-		//jumpMan.spawn(jumpManStart, 0.5f);
+		if (Keyboard::isKeyPressed(Keyboard::Right))
+		{
 
+			if (jumpMan.getPosition().left + 110 > window.getSize().x)
+			{
+				jumpMan.stopRight();
+			}
+			else
+			{
+				jumpMan.moveRight();
+			}
+		}
+		else
+		{
+			jumpMan.stopRight();
+		}
 
+		/*UPDATE THE GAME*/
+		Time dt = clock.restart();
+		jumpMan.update(dt);
 
 
 		/*DRAW THE GAME*/
