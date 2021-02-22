@@ -35,6 +35,11 @@ As the stages progress, the creatures become more numerous and their speed incre
 
 Updates:
 
+Update 1.03: 2021-02-22
+
+Updated the .cpp and .h files (PlayerOne and JumpMan) to allow Jumpmna to move from the left to right via arror keys.
+
+
 Update 1.02: 2021-02-21
 
 Added more functionally to the code.
